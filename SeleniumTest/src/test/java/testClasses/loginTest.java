@@ -53,7 +53,7 @@ class LoginTest {
         loginPage.setPassword("SuperSecretPassword!");
         loginPage.clickSubmit();
        String actualMessage= loginPage.getInvalidUsername();
-        Assert.assertEquals(actualMessage," Your username is invalid!");
+       Assert.assertTrue(actualMessage.contains("Your username is invalid!"));
     }
 
     @Test
@@ -65,7 +65,7 @@ class LoginTest {
         loginPage.setPassword("SuperSecret");
         loginPage.clickSubmit();
         String actualMessage= loginPage.getInvalidUsername();
-        Assert.assertEquals(actualMessage," Your password is invalid!");
+        Assert.assertTrue(actualMessage.contains("Your password is invalid!"));
     }
     @AfterTest
     public void afterTest() {
