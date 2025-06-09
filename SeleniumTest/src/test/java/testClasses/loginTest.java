@@ -33,7 +33,7 @@ class LoginTest {
     }
 
 
-    @Test
+    @Test(priority=3)
     public void loginToHeroApp()
     {
         loginPage = new Login(driver);
@@ -44,7 +44,7 @@ class LoginTest {
         Assert.assertEquals(actualMessage,"Welcome to the Secure Area. When you are done click logout below.");
     }
 
-    @Test(priority =1)
+    @Test(priority=2)
 
     public void invalidUserLogin()
     {
@@ -56,7 +56,7 @@ class LoginTest {
        Assert.assertTrue(actualMessage.contains("Your username is invalid!"));
     }
 
-    @Test
+    @Test(priority=1)
 
     public void invalidPasswordLogin()
     {
